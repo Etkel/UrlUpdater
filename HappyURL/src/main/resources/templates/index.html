@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>URL updater</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="container">
+  <form class="form-horizontal" action="/result" method="POST">
+    <h3>Input URL</h3>
+    <input type="text" name="url" placeholder="URL"><p>
+    <input type="submit" value="Generate">
+  </p>
+    <h4 th:if="${shortURL != null}">
+      <p th:text="'Your short url is ' + ${shortURL} + '!'"/>
+    </h4>
+  </form>
+</div>
+</body>
+</html>
+
+
