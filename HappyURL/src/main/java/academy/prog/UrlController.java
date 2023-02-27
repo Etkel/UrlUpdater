@@ -65,8 +65,8 @@ public class UrlController {
     @ResponseBody
     @GetMapping("del/{id}")
     public ResponseEntity<Void> delete(@PathVariable("id") Long id) {
-        if (urlService.getUrl(id) != null){
-            urlService.delete(id);
+       if (urlRepository.findById(id).isPresent()){
+            urlRepository.deleteById(id);
         }
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.set("ID", " is deleted");
