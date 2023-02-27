@@ -50,7 +50,12 @@ public class UrlService {
     }
 
     @Transactional
-    public void delete(Long id) {
+    public void deleteById(Long id) {
         urlRepository.deleteById(id);
+    }
+
+    @Transactional(readOnly = true)
+    public Optional<UrlRecord> findById(Long id) {
+        return urlRepository.findById(id);
     }
 }
