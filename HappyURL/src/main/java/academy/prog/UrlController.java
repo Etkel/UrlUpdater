@@ -13,13 +13,11 @@ import java.util.List;
 @Controller
 public class UrlController {
     private final UrlService urlService;
-    private final UrlRepository urlRepository;
-
-    public UrlController(UrlService urlService,
-                         UrlRepository urlRepository) {
+    
+    public UrlController(UrlService urlService) {
         this.urlService = urlService;
-        this.urlRepository = urlRepository;
     }
+    
     @ResponseBody
     @PostMapping("shorten")
     public UrlResultDTO shorten(@RequestBody UrlDTO urlDTO) {
