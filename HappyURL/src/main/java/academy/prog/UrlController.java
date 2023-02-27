@@ -54,9 +54,6 @@ public class UrlController {
         UrlDTO urlDTO = new UrlDTO();
         urlDTO.setUrl(url);
         long id = urlService.saveUrl(urlDTO);
-        var result = new UrlResultDTO();
-        result.setUrl(urlDTO.getUrl());
-        result.setShortUrl(Long.toString(id));
         model.addAttribute("shortURL", id);
         return "index";
     }
